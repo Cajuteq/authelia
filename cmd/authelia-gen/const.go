@@ -8,7 +8,7 @@ const (
 	subPathCmd      = "cmd"
 	subPathInternal = "internal"
 
-	fileCICommitLintConfig = ".commitlintrc.js"
+	fileCICommitLintConfig = ".commitlintrc.cjs"
 	fileWebI18NIndex       = "src/i18n/index.ts"
 	fileWebPackage         = "package.json"
 
@@ -45,10 +45,22 @@ const (
 )
 
 const (
+	prefixCLI = "cli-"
+)
+
+const (
 	delimiterLineFrontMatter = "---"
 
 	localeDefault          = "en"
 	localeNamespaceDefault = "portal"
+)
+
+const (
+	extJSON = ".json"
+)
+
+const (
+	pathJSONSchema = "json-schema"
 )
 
 const (
