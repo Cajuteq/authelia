@@ -14,7 +14,7 @@ func NewIdentityVerification(jti uuid.UUID, username, action string, ip net.IP) 
 	return IdentityVerification{
 		JTI:       jti,
 		IssuedAt:  time.Now(),
-		ExpiresAt: time.Now().Add(5 * time.Minute),
+		ExpiresAt: time.Now().Add(45 * time.Minute),
 		Action:    action,
 		Username:  username,
 		IssuedIP:  NewIP(ip),
