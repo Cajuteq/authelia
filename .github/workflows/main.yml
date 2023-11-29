@@ -20,7 +20,7 @@ jobs:
         uses: actions/setup-go@v4.1.0
         with:
           go-version: 1.21.4
-      - run: apt update
+      - run: sudo apt update
       - name: install node
         run: sudo apt install nodejs -y
         
