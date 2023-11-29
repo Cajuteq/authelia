@@ -1,0 +1,29 @@
+name: Build and publish a Docker mage
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+
+jobs:
+  build:
+    name: Build & push docker image
+    runs-on: ubuntu-latest
+    env:
+      IMG_NAME: ${{ github.repository }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Go environment
+        uses: actions/setup-go@v4.1.0
+        with:
+          go-version: 1.21.4
+          
+      - name: Source AUTHELIA
+        run: source bootstrap.sh
+        
+      - name: Build AUTHELIA
+        run: authelia-scripts docker build
