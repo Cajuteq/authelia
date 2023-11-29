@@ -30,6 +30,7 @@ jobs:
       - name: Source AUTHELIA
         run: |
           source bootstrap.sh 
+          git tag latest
           authelia-scripts docker build
         env:
           GOPATH: /home/runner/go
