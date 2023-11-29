@@ -22,6 +22,9 @@ jobs:
         with:
           go-version: 1.21.4
           
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2.4.0
+        
       - name: Source AUTHELIA
         run: source bootstrap.sh
         
