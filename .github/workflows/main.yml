@@ -26,10 +26,12 @@ jobs:
         run: sudo apt install nodejs -y
         
       - run: npm install -g pnpm
-      - run: export GOPATH=$HOME/go
-      
-      - name: Source AUTHELIA
-        run: source bootstrap.sh
         
+      - name: Source AUTHELIA
+        run: |
+          source bootstrap.sh
+        env:
+          GOPATH: $HOME/go
+          
       - name: Build AUTHELIA
         run: authelia-scripts docker build
