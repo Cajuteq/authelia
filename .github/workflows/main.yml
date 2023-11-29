@@ -16,20 +16,15 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-
       - name: Setup Go environment
         uses: actions/setup-go@v4.1.0
         with:
           go-version: 1.21.4
-
-      - name: Export shell
-        run: export SHELL=/usr/bin/bash
-        
-      - name: Install pnpm
-        run: sudo wget -qO- https://get.pnpm.io/install.sh | ENV="$HOME/.shrc" SHELL="$(which sh)" sh -
-        
-      - name: source pnpm
-        run: source /home/runner/.shrc
+      - run: export SHELL=/usr/bin/bash
+      - run: sudo wget -qO- https://get.pnpm.io/install.sh | ENV="$HOME/.shrc" SHELL="$(which sh)" sh -
+      - run: source /home/runner/.shrc
+      - run: pnpm --version
+      - run: pnpm version
         
       - name: Source AUTHELIA
         run: source bootstrap.sh
