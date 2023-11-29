@@ -21,16 +21,13 @@ jobs:
         with:
           go-version: 1.21.4
       - run: sudo apt update
+      
       - name: install node
         run: sudo apt install nodejs -y
         
       - run: npm install -g pnpm
-      #- run: export SHELL=/usr/bin/bash
-      #- run: sudo wget -qO- https://get.pnpm.io/install.sh | ENV="$HOME/.shrc" SHELL="$(which sh)" sh -
-      #- run: source /home/runner/.shrc
-      - run: pnpm --version
-      - run: pnpm version
-        
+      - run: export GOPATH=$HOME/go
+      
       - name: Source AUTHELIA
         run: source bootstrap.sh
         
