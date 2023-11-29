@@ -26,6 +26,7 @@ jobs:
         run: sudo apt install nodejs -y
         
       - run: npm install -g pnpm
+      - run: echo ${HOME}
         
       - name: Source AUTHELIA
         run: |
