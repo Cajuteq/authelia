@@ -23,7 +23,7 @@ jobs:
           go-version: 1.21.4
           
       - name: Install pnpm
-        run: sudo apt install pnpm
+        run: sudo curl -fsSL https://get.pnpm.io/install.sh | sh -
         
       - name: Source AUTHELIA
         run: source bootstrap.sh
