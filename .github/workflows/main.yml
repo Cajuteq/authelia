@@ -26,7 +26,7 @@ jobs:
         run: export SHELL=/usr/bin/bash
         
       - name: Install pnpm
-        run: sudo curl -fsSL https://get.pnpm.io/install.sh | sh -
+        run: sudo wget -qO- https://get.pnpm.io/install.sh | ENV="$HOME/.shrc" SHELL="$(which sh)" sh -
         
       - name: Source AUTHELIA
         run: source bootstrap.sh
