@@ -48,7 +48,7 @@ In template files, you can use the following placeholders which are automaticall
 |:--------------------:|:--------------------:|:----------------------------------------------------------------------------------------------------------------------------------------------:|
 |   `{{ .LinkURL }}`   | IdentityVerification |                                            The URL associated with the notification if applicable.                                             |
 |  `{{ .LinkText }}`   | IdentityVerification |                                 The display value for the URL associated with the notification if applicable.                                  |
-|    `{{ .Title }}`    |         All          | A predefined title for the email. <br> It will be `"Reset your password"` or `"Password changed successfully"`, depending on the current step. |
+|    `{{ .Title }}`    |         All          | A predefined title for the email. <br> It will be `"Réinitialisez votre mot de passe"` or `"Mot de passe modifié avec succès"`, depending on the current step. |
 | `{{ .DisplayName }}` |         All          |                                                     The name of the user, i.e. `John Doe`                                                      |
 |  `{{ .RemoteIP }}`   |         All          |                                      The remote IP address (client) that initiated the request or event.                                       |
 
