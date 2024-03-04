@@ -47,7 +47,7 @@ There are currently two providers for session storage (three if you count Redis 
 
 * Memory (default, stateful, no additional configuration)
 * [Redis](redis.md) (stateless).
-* [Redis Sentinel](redis.md#highavailability) (stateless, highly available).
+* [Redis Sentinel](redis.md#high_availability) (stateless, highly available).
 
 ### Kubernetes or High Availability
 
@@ -148,7 +148,8 @@ be used to generate the appropriate redirection URL when authentication is requi
 1. Be able to read and write cookies for the configured [domain](#domain-1).
 2. Use the `https://` scheme.
 3. Include the path if relevant (i.e. `https://example.com/authelia` rather than `https://example.com` if you're using
-   the [server path option](../miscellaneous/server.md#path) of `authelia` and if the Authelia portal is inaccessible from `https://example.com`).
+   the [server address option](../miscellaneous/server.md#address) of `authelia` to specify a subpath and if the
+   Authelia portal is inaccessible from `https://example.com`).
 
 The appropriate query parameter or header for your relevant proxy can override this behaviour.
 
@@ -157,12 +158,12 @@ The appropriate query parameter or header for your relevant proxy can override t
 {{< confkey type="string" required="no" >}}
 
 This is a completely optional URL which is used as the redirection location when visiting Authelia directly. This option
-deprecates the global [default_redirection_url](../miscellaneous/introduction.md#defaultredirectionurl) option. This URL
+deprecates the global [default_redirection_url](../miscellaneous/introduction.md#default_redirection_url) option. This URL
 must:
 
 1. Be able to read and write cookies for the configured [domain](#domain-1).
 2. Use the `https://` scheme.
-3. Not be the same as the [authelia_url](#autheliaurl)
+3. Not be the same as the [authelia_url](#authelia_url)
 
 If this option is absent you must use the appropriate query parameter or header for your relevant proxy.
 
@@ -178,7 +179,7 @@ The name of the session cookie. By default this is set to the `name` value in th
 
 {{< confkey type="string" required="no" >}}
 
-*__Default Value:__ This option takes its default value from the [same_site](#samesite) setting above.*
+*__Default Value:__ This option takes its default value from the [same_site](#same_site) setting above.*
 
 Sets the cookies SameSite value. Prior to offering the configuration choice this defaulted to None. The new default is
 Lax. This option is defined in lower-case. So for example if you want to set it to `Strict`, the value in configuration
@@ -205,14 +206,14 @@ but don't want unused devices to be vulnerable.
 
 *__Default Value:__ This option takes its default value from the [expiration](#expiration) setting above.*
 
-The period of time before the cookie expires and the session is destroyed. This is overriden by
-[remember_me](#rememberme) when the remember me box is checked.
+The period of time before the cookie expires and the session is destroyed. This is overridden by
+[remember_me](#remember_me) when the remember me box is checked.
 
 #### remember_me
 
 {{< confkey type="string,integer" syntax="duration" required="no" >}}
 
-*__Default Value:__ This option takes its default value from the [remember_me](#rememberme) setting above.*
+*__Default Value:__ This option takes its default value from the [remember_me](#remember_me) setting above.*
 
 The period of time before the cookie expires and the session is destroyed when the remember me box is checked. Setting
 this to `-1` disables this feature entirely for this session cookie domain.

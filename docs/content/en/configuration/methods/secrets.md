@@ -42,7 +42,7 @@ starting at the `{{` and `}}`, which indicate the start and end of the template 
 
 When considering the `private_key` the start of a templated section also has a `-` which removes the whitespace before
 the template section which starts the template content just after the `|` above it. The `fileContent` function reads the
-content of the `./test_resources/example_filter_rsa_private_key` file (releative to the Authelia working directory), and
+content of the `./test_resources/example_filter_rsa_private_key` file (relative to the Authelia working directory), and
 the `nindent` function adds a new line and indents every line in the file by `8` characters. Note the `|` between
 `nindent` and `fileContent` passes the output of `fileContent` function to the `nindent` function.
 
@@ -84,15 +84,15 @@ other configuration using the environment but instead of loading a file the valu
 {{% table-config-keys secrets="true" %}}
 
 [server.tls.key]: ../miscellaneous/server.md#key
-[jwt_secret]: ../miscellaneous/introduction.md#jwtsecret
-[duo_api.integration_key]: ../second-factor/duo.md#integrationkey
-[duo_api.secret_key]: ../second-factor/duo.md#secretkey
+[jwt_secret]: ../miscellaneous/introduction.md#jwt_secret
+[duo_api.integration_key]: ../second-factor/duo.md#integration_key
+[duo_api.secret_key]: ../second-factor/duo.md#secret_key
 [session.secret]: ../session/introduction.md#secret
 [session.redis.password]: ../session/redis.md#password
 [session.redis.tls.certificate_chain]: ../session/redis.md#tls
 [session.redis.tls.private_key]: ../session/redis.md#tls
-[session.redis.high_availability.sentinel_password]: ../session/redis.md#sentinelpassword
-[storage.encryption_key]: ../storage/introduction.md#encryptionkey
+[session.redis.high_availability.sentinel_password]: ../session/redis.md#sentinel_password
+[storage.encryption_key]: ../storage/introduction.md#encryption_key
 [storage.mysql.password]: ../storage/mysql.md#password
 [storage.mysql.tls.certificate_chain]: ../storage/mysql.md#tls
 [storage.mysql.tls.private_key]: ../storage/mysql.md#tls
@@ -106,9 +106,9 @@ other configuration using the environment but instead of loading a file the valu
 [authentication_backend.ldap.password]: ../first-factor/ldap.md#password
 [authentication_backend.ldap.tls.certificate_chain]: ../first-factor/ldap.md#tls
 [authentication_backend.ldap.tls.private_key]: ../first-factor/ldap.md#tls
-[identity_providers.oidc.issuer_certificate_chain]: ../identity-providers/openid-connect.md#issuercertificatechain
-[identity_providers.oidc.issuer_private_key]: ../identity-providers/openid-connect.md#issuerprivatekey
-[identity_providers.oidc.hmac_secret]: ../identity-providers/openid-connect.md#hmacsecret
+[identity_providers.oidc.issuer_certificate_chain]: ../identity-providers/openid-connect/provider.md#issuer_certificate_chain
+[identity_providers.oidc.issuer_private_key]: ../identity-providers/openid-connect/provider.md#issuer_private_key
+[identity_providers.oidc.hmac_secret]: ../identity-providers/openid-connect/provider.md#hmac_secret
 
 
 ## Secrets in configuration file
